@@ -3,7 +3,9 @@
 ShortIntegerRef
 ============================================================================
 
-:class:`ShortIntegerRef` is a modified version of :class:`IntegerRef` which allows for greater flexibility in the way that numbers may be pronounced, allowing for words like "hundred" to be dropped. This may be particularly useful when navigating files by line or page number.
+:class:`ShortIntegerRef` is a modified version of :class:`IntegerRef` which allows for greater flexibility in the way
+that numbers may be pronounced, allowing for words like "hundred" to be dropped. This may be particularly useful when
+navigating files by line or page number.
 
 Some examples of allowed pronunciations:
 
@@ -59,7 +61,7 @@ int_10_99       = MagnitudeIntBuilder(
                   )
 # Oh five
 int_and_1_9    = CollectionIntBuilder(
-                   spec        = "(oh | zero) <element>",
+                   spec        = "zero <element>",
                    set         = [int_1_9],
                   )
 # Fifty five / five five

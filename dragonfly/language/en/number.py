@@ -32,11 +32,11 @@ from ..base.digits_internal   import DigitsContentBase
 #---------------------------------------------------------------------------
 
 int_0           = MapIntBuilder({
-                                 "(zero | oh)":         0,
+                                 "zero":         0,
                                })
 int_1_9         = MapIntBuilder({
                                  "one":                 1,
-                                 "(two | too | to)":    2,
+                                 "two":    2,
                                  "three":               3,
                                  "four":                4,
                                  "five":                5,
@@ -110,5 +110,5 @@ class IntegerContent(IntegerContentBase):
                 int_100s, int_100big, int_1000s, int_1000000s]
 
 class DigitsContent(DigitsContentBase):
-    digits = [("zero", "oh"), "one", ("two", "too", "to"), "three",
+    digits = ["zero", "one", "two", "three",
               "four", "five", "six", "seven", "eight", "nine"]
