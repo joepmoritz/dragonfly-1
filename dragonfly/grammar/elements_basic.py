@@ -457,7 +457,7 @@ class Optional(ElementBase):
         if node.children:
             return node.children[0].value()
         else:
-            return None
+            return self.default
 
 
 #---------------------------------------------------------------------------
