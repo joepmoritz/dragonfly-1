@@ -81,9 +81,7 @@ class Rule(object):
 
         # Generate a unique name for this rule if none is given.
         if not name:
-            name = "_anonrule_%03d_%s" % (Rule._next_anonymous_id,
-                                          self.__class__.__name__)
-            Rule._next_anonymous_id += 1
+            name = self.__class__.generate_rule_name()
         self._name = name
 
         self._active = None
@@ -94,6 +92,14 @@ class Rule(object):
 
     def __repr__(self):
         return "%s(%s)" % (self.__class__.__name__, self._name)
+
+    @classmethod
+    def generate_rule_name(cls):
+        name = "_anonrule_%03d_%s" % (Rule._next_anonymous_id,
+                                      cls.__name__)
+        Rule._next_anonymous_id += 1
+        return name
+
 
     #-----------------------------------------------------------------------
     # Protected attribute access.

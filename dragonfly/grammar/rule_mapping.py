@@ -112,7 +112,7 @@ class MappingRule(Rule):
                  exported=None, context=None):
         # pylint: disable=too-many-branches
 
-        if name     is None: name     = self.__class__.__name__
+        if name     is None: name     = self.__class__.generate_rule_name()
         if mapping  is None: mapping  = self.mapping
         if extras   is None: extras   = self.extras
         if defaults is None: defaults = self.defaults
