@@ -235,6 +235,7 @@ class BringApp(StartApp):
         self._index = kwargs.pop("index", None)
         self._filter_func = kwargs.pop("filter_func", None)
         self._focus_only = kwargs.pop("focus_only", False)
+        self._start_action = kwargs.pop("start_action", None)
         StartApp.__init__(self, *args, **kwargs)
 
     def _execute(self, data=None):
@@ -251,4 +252,7 @@ class BringApp(StartApp):
         if not focus_action.execute():
             # Failed to focus on an existing window, so start
             #  the application.
-            StartApp._execute(self, data)
+            if self._start_action:
+                self._start_action.execute()
+            else:
+                StartApp._execute(self, data)
